@@ -17,7 +17,9 @@ defmodule Sharpie.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Sharpie do
-  #   pipe_through :api
-  # end
+  scope "/api/images/", Sharpie do
+    pipe_through :api
+
+    get "/", ImageController, :index
+  end
 end
