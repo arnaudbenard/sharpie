@@ -16,10 +16,11 @@ defmodule Sharpie.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
+  # Images API
   scope "/api/images/", Sharpie do
-    pipe_through :api
+    # pipe_through :api
 
     get "/", ImageController, :index
+    post "/", ImageController, :upload
   end
 end
