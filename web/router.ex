@@ -20,7 +20,14 @@ defmodule Sharpie.Router do
   scope "/api/images/", Sharpie do
     # pipe_through :api
 
+    # - `GET /api/images/` -> List all the images infos
     get "/", ImageController, :index
-    post "/", ImageController, :upload
+    # - `POST /api/images/` -> Upload image
+    post "/", ImageController, :convert
+    # - `GET /api/images/:id` ->  Get image
+    get "/:id", ImageController, :show
+    # - `POST /api/images/:id/convert` -> Convert image
+    post "/:id/convert", ImageController, :convert
+
   end
 end

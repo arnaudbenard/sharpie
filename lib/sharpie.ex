@@ -5,6 +5,9 @@ defmodule Sharpie do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    import Riex
+
+    {:ok, pid} = Riex.Connection.start_link('127.0.0.1', 8087)# Default values
 
     children = [
       # Define workers and child supervisors to be supervised

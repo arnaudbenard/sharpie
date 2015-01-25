@@ -15,7 +15,7 @@
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Sharpie, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :riex]]
   end
 
   # Specifies your project dependencies
@@ -25,6 +25,7 @@
     [{:phoenix, "~> 0.7.2"},
      {:cowboy, "~> 1.0"},
      {:plug, "~> 0.7"},
-     {:mogrify, "~> 0.1"}]
+     {:mogrify, "~> 0.1"},
+     { :riex, github: "edgurgel/riex" }]
   end
 end
